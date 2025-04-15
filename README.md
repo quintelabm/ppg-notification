@@ -1,20 +1,27 @@
 # PPG Notification
 
-Upon choosing the date and the level, the application outputs an .ics file for students including the alerts for Graduate program deadlines.
+Sistema que gera um arquivo .ics contendo lembretes para todos os prazos de mestrado ou doutorado do Programa de Pos-Graduaçao em Modelagem Computacional da UFJF (PPGMC/UFJF).
 
-## To run
+## Requisitos
+
+```
+pip install flask ics
+```
 
 ```
 python app.py
 ```
 
-open in browser:
+abra no navegador:
 
 ```
 http://127.0.0.1:5000
 ```
 
-Exemplo de captura de tela do sistema:
 
 ![ texto](static/tela.png)
 
+1 - Escolha a data de ingresso;
+2 - Escolha o curso (mestrado ou doutorado);
+3 - clique em gerar lembretes
+4 - abra o arquivo .ics gerado escolhendo qual calendario vai adicionar.
