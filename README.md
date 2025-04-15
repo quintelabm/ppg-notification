@@ -22,6 +22,9 @@ http://127.0.0.1:5000
 ![ texto](static/tela.png)
 
 1 - Escolha a data de ingresso;
+
 2 - Escolha o curso (mestrado ou doutorado);
-3 - clique em gerar lembretes
-4 - abra o arquivo .ics gerado escolhendo qual calendario vai adicionar.
+
+3 - Clique em gerar lembretes;
+
+4 - Abra o arquivo .ics gerado escolhendo qual calendario vai adicionar.
