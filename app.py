@@ -22,6 +22,7 @@ DEADLINES = {
         "Proficiência em inglês": 24,
         "Proficiência em Segunda Língua": 36,
         "Estagio Docencia II": 36,
+        "Seminario de acompanhamento": 48,
         "Defesa da Tese": 48,
     }
 }

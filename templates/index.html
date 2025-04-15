@@ -5,8 +5,12 @@
     <title>Gerador de Lembretes da Pós</title>
 </head>
 <body>
-    <h1>Gerador de Lembretes da Pós-Graduação</h1>
-    <form method="POST">
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo da Instituição" style="max-height: 100px; margin-bottom: 20px;">
+        <h1>Gerador de Lembretes da Pós-Graduação</h1>
+    </div>
+
+    <form method="POST" style="max-width: 400px; margin: auto;">
         <label for="data_ingresso">Data de ingresso no programa:</label>
         <input type="date" id="data_ingresso" name="data_ingresso" required>
         <br><br>
