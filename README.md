@@ -1,6 +1,6 @@
 # PPG Notification
 
-Sistema que gera um arquivo .ics contendo lembretes para todos os prazos de mestrado ou doutorado do Programa de Pos-Graduaçao em Modelagem Computacional da UFJF (PPGMC/UFJF).
+Sistema que gera um arquivo .ics contendo lembretes para todos os prazos de mestrado ou doutorado do Programa de Pos-Graduaçao em Modelagem Computacional da UFJF (PPGMC/UFJF) de acordo com o  [Regulamento Interno](https://www2.ufjf.br/pgmc/curso/normas-e-regulamentos/).
 
 ## Requisitos
 
