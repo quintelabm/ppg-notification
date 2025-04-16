@@ -2,8 +2,11 @@ from flask import Flask, render_template, request, send_file
 from datetime import datetime, timedelta
 from ics import Calendar, Event
 import io
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app, origins=["https://quintelabm.github.io/ppg-notification/"])
 
 # Regras de prazos por curso (em meses)
 DEADLINES = {
