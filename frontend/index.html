@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Lembretes da Pós</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo da Instituição" style="max-height: 100px; margin-bottom: 20px;">
+        <h1>Gerador de Lembretes da Pós-Graduação</h1>
+    </div>
+
+    <form method="POST" style="max-width: 400px; margin: auto;">
+        <label for="data_ingresso">Data de ingresso no programa:</label>
+        <input type="date" id="data_ingresso" name="data_ingresso" required>
+        <br><br>
+
+        <label for="curso">Tipo de curso:</label>
+        <select name="curso" id="curso" required>
+            <option value="">--Selecione--</option>
+            <option value="mestrado">Mestrado</option>
+            <option value="doutorado">Doutorado</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Gerar lembretes para o Google Calendar</button>
+    </form>
+</body>
+</html>
