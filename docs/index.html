@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Gerador de Lembretes da Pós</title>
+  <meta charset="UTF-8" />
+  <title>Gerar Lembretes Acadêmicos</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    label, input, select, button {
+      display: block;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <div style="text-align: center;">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo da Instituição" style="max-height: 100px; margin-bottom: 20px;">
-        <h1>Gerador de Lembretes da Pós-Graduação</h1>
-    </div>
+  <h1>Gerador de Lembretes Acadêmicos</h1>
+  <form id="lembreteForm">
+    <label for="data">Data de ingresso:</label>
+    <input type="date" id="data" name="data" required>
 
-    <!-- index.html (para GitHub Pages) -->
-<form action="https://https://ppg-notification.onrender.com" method="POST">
-    <label>Nome:</label>
-    <input name="nome" type="text" />
-    
-    <label>Data de ingresso:</label>
-    <input name="data_ingresso" type="date" />
-  
-    <label>Tipo:</label>
-    <select name="tipo">
+    <label for="curso">Curso:</label>
+    <select id="curso" name="curso" required>
       <option value="mestrado">Mestrado</option>
       <option value="doutorado">Doutorado</option>
     </select>
-  
-    <button type="submit">Gerar lembretes</button>
+
+    <button type="submit">Gerar arquivo .ics</button>
   </form>
-  
+
+  <div id="resultado" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("lembreteForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = document.getElementById("data").value;
+      const curso = document.getElementById("curso").value;
+
+      const resposta = await fetch("https://SEU-BACKEND.onrender.com/gerar-ics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data_ingresso: data, curso: curso })
+      });
+
+      if (resposta.ok) {
+        const blob = await resposta.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "lembretes.ics";
+        a.click();
+      } else {
+        document.getElementById("resultado").innerText = "Erro ao gerar lembretes.";
+      }
+    });
+  </script>
 </body>
 </html>
